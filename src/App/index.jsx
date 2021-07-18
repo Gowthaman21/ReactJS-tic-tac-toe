@@ -6,6 +6,7 @@ const App = () =>{
     const [Val, setVal] = useState(true)
     const [arr, setArr] = useState([[null,null,null],[null,null,null],[null,null,null]])
     const [msg, setMsg] = useState('')
+    var boxes=document.getElementsByClassName('col')
     function chose(e , a, b){
         
         e.target.setAttribute('style', 'pointer-events:none')
@@ -23,16 +24,15 @@ const App = () =>{
     }
 
     function disable(){
-        document.getElementsByClassName('container')[0].setAttribute('style', 'pointer-events:none')
         document.getElementsByClassName('turns')[0].setAttribute('style', 'display:none')
+        for (var i = 0, max = boxes.length; i < max; i++) {
+            boxes[i].setAttribute('style', 'pointer-events:none')
+        }
     }
 
     function reset(){
         let newArr=[[null,null,null],[null,null,null],[null,null,null]]
         setArr(newArr)
-        document.getElementsByClassName('container')[0].setAttribute('style', 'pointer-events:auto')
-        var boxes=document.getElementsByClassName('col')
-        console.log(boxes)
         for (var i = 0, max = boxes.length; i < max; i++) {
             boxes[i].setAttribute('style', 'pointer-events:auto')
             boxes[i].innerHTML='';
@@ -44,7 +44,6 @@ const App = () =>{
 
 
     function checkWinner(){
-        let data = {'res':''}
         arr.forEach(e => {
             if (e[0] === 1 && e[1] === 1 && e[2] === 1){
                 setMsg('Player1 Wins')
@@ -54,7 +53,6 @@ const App = () =>{
                 setMsg('Player2 Wins')
                 disable()
             }
-            return data;
         });
         let cnt = 0
         for (let i = 0; i < 3; i++) {
