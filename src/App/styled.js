@@ -18,3 +18,15 @@ export const Box= styled.span`
         border-right : none;
     `}
 `;
+
+export const Input=styled.input`
+
+    :focus{
+        box-shadow: inset 0 -1px 0 #fff;
+        border: 1px solid #ced4da;
+    }
+
+    :active{
+        border-color: none;
+    }
+`;
