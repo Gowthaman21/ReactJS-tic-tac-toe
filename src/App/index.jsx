@@ -178,14 +178,8 @@ const App = () =>{
                 </Modal.Footer>
             </Modal>
             <h1 className='text-center'>
-                Let's Upgrade React.JS
-            </h1>
-            <h2 className='text-center'>
-                Day 3 Assignment
-            </h2>
-            <h2 className='text-center'>
                 Tic Tac Toe
-            </h2>
+            </h1>
             <div className='container justify-content-center d-grid'>
                 <div className='row'>
                     <Box className='col border-top-0' pos='l' onClick={(e)=>chose(e, 0 , 0)}></Box>
